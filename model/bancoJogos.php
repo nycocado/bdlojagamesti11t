@@ -16,7 +16,7 @@
         return $resul;
     }
     function alterarJogos($conexao,$codJog,$nomeJog,$tamanhoJog,$precoJog,$requisitosJog,$consoleJog,$classificacaoJog,$avaliacaoJog){
-        $query="update tbjogos set nomeJog=$nomeJog, tamanhoJog=$tamanhoJog, precoJog=$precoJog, requisitosJog=$requisitosJog, consoleJog=$consoleJog, classificacaoJog=$classificacaoJog, avaliacaoJog=$avaliacaoJog where codJog = $codJog";
+        $query="update tbjogos set nomeJog='{$nomeJog}', tamanhoJog='{$tamanhoJog}', precoJog='{$precoJog}', requisitosJog='{$requisitosJog}', consoleJog='{$consoleJog}', classificacaoJog='{$classificacaoJog}', avaliacaoJog='{$avaliacaoJog}' where codJog = '{$codJog}'";
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
