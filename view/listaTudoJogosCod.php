@@ -40,13 +40,13 @@ include_once("../model/bancoJogos.php");
             <td><?=$jogos['precoJog']?></td>
             <td>
                 <form action="../controller/deletarJogos.php" method="POST">
-                    <input type="hidden" name="codJogDeletar" value="<?=$jogo['codJog']?>">
+                    <input type="hidden" name="codJogDeletar" value="<?=$jogos['codJog']?>">
                     <button type="submit" class="btn-small btn-danger">Deletar</button>
                 </form>
             </td>
             <td>
                 <form action="formAlterarJogos.php" method="POST">
-                    <input type="hidden" name="codJogAlterar" value="<?=$jogo['codJog']?>">
+                    <input type="hidden" name="codJogAlterar" value="<?=$jogos['codJog']?>">
                     <button type="submit" class="btn-small btn-success">Alterar</button>
                 </form>
             </td>
