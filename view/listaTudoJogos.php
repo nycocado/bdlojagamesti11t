@@ -10,6 +10,8 @@ include_once("../model/bancoJogos.php");
             <th scope="col">Jogo</th>
             <th scope="col">Plataforma</th>
             <th scope="col">Preço</th>
+            <th scope="col">Deletar</th>
+            <th scope="col">Alterar</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +24,18 @@ include_once("../model/bancoJogos.php");
             <td><?=$jogo['nomeJog']?></td>
             <td><?=$jogo['consoleJog']?></td>
             <td><?=$jogo['precoJog']?></td>
+            <td>
+                <form action="../controller/deletarJogos.php" method="POST">
+                    <input type="hidden" name="codJogDeletar" value="<?=$jogo['codJog']?>">
+                    <button type="submit" class="btn-small btn-danger">Deletar</button>
+                </form>
+            </td>
+            <td>
+                <form action="formAlterarJogos.php" method="POST">
+                    <input type="hidden" name="codJogAlterar" value="<?=$jogo['codJog']?>">
+                    <button type="submit" class="btn-small btn-success">Alterar</button>
+                </form>
+            </td>
         </tr>
         <?php
         endforeach;

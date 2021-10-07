@@ -11,7 +11,18 @@
     }
     function listaTudoJogosCod($conexao,$codJogo){
         $query="Select * from tbjogos where codJog={$codJogo}";
-        $resultados=mysqli_query($conexao,$codJogo);
+        $resultados=mysqli_query($conexao,$query);
+        $resul=mysqli_fetch_array($resultados);
+        return $resul;
+    }
+    function alterarJogos($conexao,$codJog,$nomeJog,$tamanhoJog,$precoJog,$requisitosJog,$consoleJog,$classificacaoJog,$avaliacaoJog){
+        $query="update tbjogos set nomeJog=$nomeJog, tamanhoJog=$tamanhoJog, precoJog=$precoJog, requisitosJog=$requisitosJog, consoleJog=$consoleJog, classificacaoJog=$classificacaoJog, avaliacaoJog=$avaliacaoJog where codJog = $codJog";
+        $resultados=mysqli_query($conexao,$query);
+        return $resultados;
+    }
+    function deletarJogos($conexao,$codJog){
+        $query="delete from tbjogos where codJog=$codJog";
+        $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
 ?>

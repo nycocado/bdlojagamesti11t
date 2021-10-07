@@ -4,14 +4,14 @@ include_once("../model/conexao.php");
 include_once("../model/bancoJogos.php");
 ?>
 <div class="container m-5 p-5">
-<form action="" method="">
+<form action="listaTudoJogosCod.php" method="GET">
     <div class="row mb-3">
         <label for="inputCod" class="col-sm-2 col-form-label">Digite o Código do Jogo: </label>
         <div class="col-sm-3">
-            <input type="number" class="form-control" id="inputCod" required>
+            <input type="number" name="codJog" class="form-control" id="inputCod" required>
         </div>
         <div class="col-sm-3">
-            <button type="button" class="btn btn-dark">Buscar</button>
+            <button type="submit" class="btn btn-dark">Buscar</button>
         </div>
     </div>
 </form>
@@ -23,21 +23,36 @@ include_once("../model/bancoJogos.php");
             <th scope="col">Jogo</th>
             <th scope="col">Plataforma</th>
             <th scope="col">Preço</th>
+            <th scope="col">Deletar</th>
+            <th scope="col">Alterar</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $jogos = listaTudoJogos($conexao);
-        foreach($jogos as $jogo):
+        $codJogo = isset($_GET['codJog'])?$_GET['codJog']:"0";
+        if($codJogo>0){
+            $jogos = listaTudoJogosCod($conexao,$codJogo);
         ?>
         <tr>
-            <th scope="row"><?=$jogo['codJog']?></th>
-            <td><?=$jogo['nomeJog']?></td>
-            <td><?=$jogo['consoleJog']?></td>
-            <td><?=$jogo['precoJog']?></td>
+            <th scope="row"><?=$jogos['codJog']?></th>
+            <td><?=$jogos['nomeJog']?></td>
+            <td><?=$jogos['consoleJog']?></td>
+            <td><?=$jogos['precoJog']?></td>
+            <td>
+                <form action="../controller/deletarJogos.php" method="POST">
+                    <input type="hidden" name="codJogDeletar" value="<?=$jogo['codJog']?>">
+                    <button type="submit" class="btn-small btn-danger">Deletar</button>
+                </form>
+            </td>
+            <td>
+                <form action="formAlterarJogos.php" method="POST">
+                    <input type="hidden" name="codJogAlterar" value="<?=$jogo['codJog']?>">
+                    <button type="submit" class="btn-small btn-success">Alterar</button>
+                </form>
+            </td>
         </tr>
         <?php
-        endforeach;
+        }
         ?>
         
     </tbody>

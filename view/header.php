@@ -9,7 +9,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">Jogos</a>
+                <a class="navbar-brand" href="index.php">Jogos Online</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,10 +31,10 @@
                             Jogos
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="cadastroJogos.php">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="listaTudoJogos.php">Visualizar</a></li>
+                                <li><a class="dropdown-item" href="../view/cadastroJogos.php">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoJogos.php">Visualizar</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Buscar por Código</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoJogosCod.php">Buscar por Código</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -72,8 +72,8 @@
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
