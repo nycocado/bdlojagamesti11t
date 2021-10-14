@@ -20,10 +20,10 @@
                             Usuários
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="">Visualizar</a></li>
+                                <li><a class="dropdown-item" href="../view/cadastroUsuarios.php">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoUsuarios.php">Visualizar</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Buscar por Código</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoUsuariosCod.php">Buscar por Código</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

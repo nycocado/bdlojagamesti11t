@@ -25,4 +25,30 @@
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
+    function inserirUsuarios($conexao,$email,$senha){
+        $query="insert into tbusuarios(emailUsu,senhaUsu)values('{$email}','{$senha}')";
+        $resultados=mysqli_query($conexao,$query);
+        return $resultados;
+    }
+    function listaTudoUsuarios($conexao){
+        $query="Select * From tbusuarios";
+        $resultados=mysqli_query($conexao,$query);
+        return $resultados;
+    }
+    function listaTudoUsuariosCod($conexao,$codUsu){
+        $query="Select * from tbusuarios where codUsu={$codUsu}";
+        $resultados=mysqli_query($conexao,$query);
+        $resul=mysqli_fetch_array($resultados);
+        return $resul;
+    }
+    function alterarUsuarios($conexao,$codUsu,$emailUsu,$senhaUsu){
+        $query="update tbusuarios set emailUsu='{$emailUsu}', senhaUsu='{$senhaUsu}' where codUsu = '{$codUsu}'";
+        $resultados=mysqli_query($conexao,$query);
+        return $resultados;
+    }
+    function deletarUsuarios($conexao,$codUsu){
+        $query="delete from tbusuarios where codUsu=$codUsu";
+        $resultados=mysqli_query($conexao,$query);
+        return $resultados;
+    }
 ?>
