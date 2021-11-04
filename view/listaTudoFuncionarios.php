@@ -9,7 +9,7 @@ include_once("../model/bancoJogos.php");
             <th scope="col">Código</th>
             <th scope="col">Código do Usuário</th>
             <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
+            <th scope="col">Função</th>
             <th scope="col">Telefone</th>
             <th scope="col">Data de Nascimento</th>
             <th scope="col">Deletar</th>
@@ -18,25 +18,25 @@ include_once("../model/bancoJogos.php");
     </thead>
     <tbody>
         <?php
-        $clientes = listaTudoClientes($conexao);
-        foreach($clientes as $cliente):
+        $funcionarios = listaTudoFuncionarios($conexao);
+        foreach($funcionarios as $funcionario):
         ?>
         <tr>
-            <th scope="row"><?=$cliente['codCli']?></th>
-            <td><?=$cliente['codUsuFK']?></td>
-            <td><?=$cliente['nomeCli']?></td>
-            <td><?=$cliente['cpfCli']?></td>
-            <td><?=$cliente['foneCli']?></td>
-            <td><?=$cliente['datanasCli']?></td>
+            <th scope="row"><?=$funcionario['codFun']?></th>
+            <td><?=$funcionario['codUsuFK']?></td>
+            <td><?=$funcionario['nomeFun']?></td>
+            <td><?=$funcionario['funcaoFun']?></td>
+            <td><?=$funcionario['foneFun']?></td>
+            <td><?=$funcionario['datanasFun']?></td>
             <td>
-                <form action="../controller/deletarClientes.php" method="POST">
-                    <input type="hidden" name="codCliDeletar" value="<?=$cliente['codCli']?>">
+                <form action="../controller/deletarFuncionarios.php" method="POST">
+                    <input type="hidden" name="codCliDeletar" value="<?=$funcionario['codFun']?>">
                     <button type="submit" class="btn-small btn-danger">Deletar</button>
                 </form>
             </td>
             <td>
-                <form action="formAlterarClientes.php" method="POST">
-                    <input type="hidden" name="codCliAlterar" value="<?=$cliente['codCli']?>">
+                <form action="formAlterarFuncionarios.php" method="POST">
+                    <input type="hidden" name="codCliAlterar" value="<?=$funcionario['codFun']?>">
                     <button type="submit" class="btn-small btn-success">Alterar</button>
                 </form>
             </td>

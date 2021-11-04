@@ -4,11 +4,11 @@ include_once("../model/conexao.php");
 include_once("../model/bancoJogos.php");
 ?>
 <div class="container m-5 p-5">
-<form action="listaTudoClientesCod.php" method="POST">
+<form action="listaTudoClientesNome.php" method="POST">
     <div class="row mb-3">
-        <label for="inputCod" class="col-sm-2 col-form-label">Digite o Código do Cliente: </label>
+        <label for="inputNome" class="col-sm-2 col-form-label">Digite o Nome do Cliente: </label>
         <div class="col-sm-3">
-            <input type="number" name="codCli" class="form-control" id="inputCod" required>
+            <input type="text" name="nomeCli" class="form-control" id="inputNome" required>
         </div>
         <div class="col-sm-3">
             <button type="submit" class="btn btn-dark">Buscar</button>
@@ -31,10 +31,10 @@ include_once("../model/bancoJogos.php");
     </thead>
     <tbody>
         <?php
-        $codCli = isset($_POST['codCli'])?$_POST['codCli']:"0";
-        if($codCli>0){
-            $clientes = listaTudoClientesCod($conexao,$codCli);
-            if ($clientes) {
+        $nomeCli = isset($_POST['nomeCli'])?$_POST['nomeCli']:"";
+        if($nomeCli!=""){
+            $cliente = listaTudoClientesNome($conexao,$nomeCli);
+            foreach($cliente as $clientes):
         ?>
         <tr>
             <th scope="row"><?=$clientes['codCli']?></th>
@@ -57,10 +57,9 @@ include_once("../model/bancoJogos.php");
             </td>
         </tr>
         <?php
-        }
+        endforeach;
     }
         ?>
-        
     </tbody>
     </table>
 <?php

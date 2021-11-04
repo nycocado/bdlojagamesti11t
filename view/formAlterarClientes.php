@@ -7,9 +7,12 @@ include_once("../model/bancoJogos.php");
 <?php 
 $codCli=$_POST['codCliAlterar'];
 $cliente=listaTudoClientesCod($conexao,$codCli);
+$codUsu=$cliente['codUsuFK'];
+$usuario=listaClienteUsuario($conexao,$codUsu);
 ?>
-    <p>Código <input type="text" name="codCli" value="<?=$cliente['codCli']?>"></p>
-    <p>Código do Usuario<input type="text" name="codUsuFK" value="<?=$cliente['codUsuFK']?>"></p>
+    <p>Código <input type="number" name="codCli" value="<?=$cliente['codCli']?>" readonly></p>
+    <p>Código do Usuário<input type="number" name="codUsuFK" value="<?=$cliente['codUsuFK']?>" readonly></p>
+    <p>Email <input type= "text" name="emailUsu" value="<?=$usuario['emailUsu']?>" readonly></p>
     <p>Nome<input type="text" name="nomeCli" value="<?=$cliente['nomeCli']?>"></p>
     <p>CPF<input type="text" name="cpfCli" value="<?=$cliente['cpfCli']?>"></p>
     <p>Telefone<input type="text" name="foneCli" value="<?=$cliente['foneCli']?>"></p>

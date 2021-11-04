@@ -8,7 +8,7 @@ include_once("../model/bancoJogos.php");
 $codJogo=$_POST['codJogAlterar'];
 $jogo=listaTudoJogosCod($conexao,$codJogo);
 ?>
-    <p>Código <input type="text" name="codJog" value="<?=$jogo['codJog']?>"></p>
+    <p>Código <input type="text" name="codJog" value="<?=$jogo['codJog']?>" readonly></p>
     <p>Jogo <input type="text" name="nomeJog" value="<?=$jogo['nomeJog']?>"></p>
     <p>Tamanho do Jogo <input type="text" name="tamanhoJog" value="<?=$jogo['tamanhoJog']?>"></p>
     <p>Preço do Jogo <input type="text" name="precoJog" value="<?=$jogo['precoJog']?>"></p>

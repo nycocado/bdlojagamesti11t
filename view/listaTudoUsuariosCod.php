@@ -4,7 +4,7 @@ include_once("../model/conexao.php");
 include_once("../model/bancoJogos.php");
 ?>
 <div class="container m-5 p-5">
-<form action="listaTudoUsuariosCod.php" method="GET">
+<form action="listaTudoUsuariosCod.php" method="POST">
     <div class="row mb-3">
         <label for="inputCod" class="col-sm-2 col-form-label">Digite o Código do Usuario: </label>
         <div class="col-sm-3">
@@ -29,9 +29,10 @@ include_once("../model/bancoJogos.php");
     </thead>
     <tbody>
         <?php
-        $codUsu = isset($_GET['codUsu'])?$_GET['codUsu']:"0";
+        $codUsu = isset($_POST['codUsu'])?$_POST['codUsu']:"0";
         if($codUsu>0){
             $usuarios = listaTudoUsuariosCod($conexao,$codUsu);
+            if($usuarios){
         ?>
         <tr>
             <th scope="row"><?=$usuarios['codUsu']?></th>
@@ -53,6 +54,7 @@ include_once("../model/bancoJogos.php");
         </tr>
         <?php
         }
+    }
         ?>
         
     </tbody>

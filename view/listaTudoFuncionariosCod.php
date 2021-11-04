@@ -4,11 +4,11 @@ include_once("../model/conexao.php");
 include_once("../model/bancoJogos.php");
 ?>
 <div class="container m-5 p-5">
-<form action="listaTudoClientesCod.php" method="POST">
+<form action="listaTudoFuncionariosCod.php" method="POST">
     <div class="row mb-3">
-        <label for="inputCod" class="col-sm-2 col-form-label">Digite o Código do Cliente: </label>
+        <label for="inputCod" class="col-sm-2 col-form-label">Digite o Código do Funcionário: </label>
         <div class="col-sm-3">
-            <input type="number" name="codCli" class="form-control" id="inputCod" required>
+            <input type="number" name="codFun" class="form-control" id="inputCod" required>
         </div>
         <div class="col-sm-3">
             <button type="submit" class="btn btn-dark">Buscar</button>
@@ -22,7 +22,7 @@ include_once("../model/bancoJogos.php");
             <th scope="col">Código</th>
             <th scope="col">Código do Usuário</th>
             <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
+            <th scope="col">Função</th>
             <th scope="col">Telefone</th>
             <th scope="col">Data de Nascimento</th>
             <th scope="col">Deletar</th>
@@ -31,27 +31,27 @@ include_once("../model/bancoJogos.php");
     </thead>
     <tbody>
         <?php
-        $codCli = isset($_POST['codCli'])?$_POST['codCli']:"0";
-        if($codCli>0){
-            $clientes = listaTudoClientesCod($conexao,$codCli);
-            if ($clientes) {
+        $codFun = isset($_POST['codFun'])?$_POST['codFun']:"0";
+        if($codFun>0){
+            $funcionarios = listaTudoFuncionariosCod($conexao,$codFun);
+            if($funcionarios){
         ?>
         <tr>
-            <th scope="row"><?=$clientes['codCli']?></th>
-            <td><?=$clientes['codUsuFK']?></td>
-            <td><?=$clientes['nomeCli']?></td>
-            <td><?=$clientes['cpfCli']?></td>
-            <td><?=$clientes['foneCli']?></td>
-            <td><?=$clientes['datanasCli']?></td>
+            <th scope="row"><?=$funcionarios['codFun']?></th>
+            <td><?=$funcionarios['codUsuFK']?></td>
+            <td><?=$funcionarios['nomeFun']?></td>
+            <td><?=$funcionarios['funcaoFun']?></td>
+            <td><?=$funcionarios['foneFun']?></td>
+            <td><?=$funcionarios['datanasFun']?></td>
             <td>
-                <form action="../controller/deletarClientes.php" method="POST">
-                    <input type="hidden" name="codCliDeletar" value="<?=$clientes['codCli']?>">
+                <form action="../controller/deletarFuncionarios.php" method="POST">
+                    <input type="hidden" name="codCliDeletar" value="<?=$funcionarios['codFun']?>">
                     <button type="submit" class="btn-small btn-danger">Deletar</button>
                 </form>
             </td>
             <td>
-                <form action="formAlterarClientes.php" method="POST">
-                    <input type="hidden" name="codCliAlterar" value="<?=$clientes['codCli']?>">
+                <form action="formAlterarFuncionarios.php" method="POST">
+                    <input type="hidden" name="codCliAlterar" value="<?=$funcionarios['codFun']?>">
                     <button type="submit" class="btn-small btn-success">Alterar</button>
                 </form>
             </td>
@@ -60,7 +60,6 @@ include_once("../model/bancoJogos.php");
         }
     }
         ?>
-        
     </tbody>
     </table>
 <?php
