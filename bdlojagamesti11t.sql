@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Out-2021 às 21:51
--- Versão do servidor: 10.4.19-MariaDB
--- versão do PHP: 8.0.6
+-- Tempo de geração: 09-Nov-2021 às 20:33
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,13 @@ CREATE TABLE `tbclientes` (
   `datanasCli` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tbclientes`
+--
+
+INSERT INTO `tbclientes` (`codCli`, `codUsuFK`, `nomeCli`, `cpfCli`, `foneCli`, `datanasCli`) VALUES
+(2, 6, 'nYC', '', '', '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +57,16 @@ CREATE TABLE `tbfuncionarios` (
   `foneFun` char(12) NOT NULL,
   `datanasFun` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbfuncionarios`
+--
+
+INSERT INTO `tbfuncionarios` (`codFun`, `codUsuFK`, `nomeFun`, `funcaoFun`, `foneFun`, `datanasFun`) VALUES
+(2, 6, 'ghsfg', '', '', '0000-00-00'),
+(3, 6, '', '', '', '0000-00-00'),
+(4, 6, '', '', '', '0000-00-00'),
+(6, 6, '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -92,8 +109,16 @@ CREATE TABLE `tbpedidos` (
 CREATE TABLE `tbusuarios` (
   `codUsu` int(4) NOT NULL,
   `emailUsu` varchar(60) NOT NULL,
-  `senhaUsu` varchar(60) NOT NULL
+  `senhaUsu` varchar(60) NOT NULL,
+  `pinUsu` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbusuarios`
+--
+
+INSERT INTO `tbusuarios` (`codUsu`, `emailUsu`, `senhaUsu`, `pinUsu`) VALUES
+(6, '5', '$2y$08$MeX4zwuQ8J/wW2Ct02rR9.TO001qvTMxRyh15KF14CodGXTYAsK96', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -142,19 +167,19 @@ ALTER TABLE `tbusuarios`
 -- AUTO_INCREMENT de tabela `tbclientes`
 --
 ALTER TABLE `tbclientes`
-  MODIFY `codCli` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `codCli` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbfuncionarios`
 --
 ALTER TABLE `tbfuncionarios`
-  MODIFY `codFun` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `codFun` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tbjogos`
 --
 ALTER TABLE `tbjogos`
-  MODIFY `codJog` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codJog` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbpedidos`
@@ -166,7 +191,7 @@ ALTER TABLE `tbpedidos`
 -- AUTO_INCREMENT de tabela `tbusuarios`
 --
 ALTER TABLE `tbusuarios`
-  MODIFY `codUsu` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codUsu` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas

@@ -45,13 +45,13 @@ include_once("../model/bancoJogos.php");
             <td><?=$funcionarios['datanasFun']?></td>
             <td>
                 <form action="../controller/deletarClientes.php" method="POST">
-                    <input type="hidden" name="codCliDeletar" value="<?=$clientes['codCli']?>">
+                    <input type="hidden" name="codFunDeletar" value="<?=$clientes['codCli']?>">
                     <button type="submit" class="btn-small btn-danger">Deletar</button>
                 </form>
             </td>
             <td>
                 <form action="formAlterarClientes.php" method="POST">
-                    <input type="hidden" name="codCliAlterar" value="<?=$clientes['codCli']?>">
+                    <input type="hidden" name="codFunAlterar" value="<?=$clientes['codCli']?>">
                     <button type="submit" class="btn-small btn-success">Alterar</button>
                 </form>
             </td>

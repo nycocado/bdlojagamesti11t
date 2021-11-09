@@ -19,10 +19,10 @@ include("../view/header.php");
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-if(deletarClientes($conexao,$codCliDeletar)){
-    echo("Cliente deletado com sucesso.");
+if(alterarFuncionarios($conexao,$codFun,$codUsuFK,$nomeFun,$funcaoFun,$foneFun,$datanasFun)){
+    echo("Funcionário alterado com sucesso.");
 }else{
-    echo("Cliente não deletado.");
+    echo("Funcionário não alterado.");
 }
 ?>
 </div>
