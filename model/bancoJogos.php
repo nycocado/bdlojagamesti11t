@@ -119,8 +119,24 @@
         return $resultados;
     }
     function deletarFuncionarios($conexao,$codFun){
-        $query="delete from tbclientes where codFun=$codFun";
+        $query="delete from tbfuncionarios where codFun=$codFun";
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
+    }
+    function buscarAcesso($conexao,$email,$senha){
+        $query="select * from tbusuarios where emailUsu='{$email}'";
+        $resultados=mysqli_query($conexao,$query);
+        if(mysqli_num_rows($resultados)>0){
+            $linha=mysqli_fetch_assoc($resultados);
+            if(password_verify($senha,$linha["senhaUsu"])){
+                $_SESSION["emailUsu"]=$linha["emailUsu"];
+                $_SESSION["codUsu"]=$linha["codUsu"];
+                return $linha["emailUsu"];
+            }else{
+                return "Senha não confere";
+            }
+        }else{
+            return "Email não cadastrado";
+        }
     }
 ?>
