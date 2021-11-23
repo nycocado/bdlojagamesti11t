@@ -1,3 +1,14 @@
+<?php
+if( session_status() !== PHP_SESSION_ACTIVE )
+{
+  session_start();
+}
+
+if(!$_SESSION["emailUsu"]){
+  $_SESSION["msg"]="<div class='alert alert-danger' role='alert'>Você não tem acesso... tente novamente.</div>";
+  header("Location:../view/logar.php");
+}
+?>
 <!DOCTYPE HTML>
 <html lang="pt-BR">
     <head>
@@ -66,16 +77,15 @@
                             Pedidos
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="../view/cadastroPedidos.php">Cadastro</a></li>
                                 <li><a class="dropdown-item" href="#">Visualizar</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Buscar por Código</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar">
-                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    <form class="d-flex" action="../controller/sair.php">
+                        <button class="btn btn-outline-light" type="submit">Sair</button>
                     </form>
                 </div>
             </div>

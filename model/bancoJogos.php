@@ -123,6 +123,12 @@
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
+    function listaBuscaFunUsu($conexao,$codUsuFK){
+        $query="Select * from tbfuncionarios where codUsuFK like '{$codUsuFK}'";
+        $resultados=mysqli_query($conexao,$query);
+        $resul=mysqli_fetch_array($resultados);
+        return $resul;
+    }
     function buscarAcesso($conexao,$email,$senha){
         $query="select * from tbusuarios where emailUsu='{$email}'";
         $resultados=mysqli_query($conexao,$query);
@@ -138,5 +144,10 @@
         }else{
             return "Email não cadastrado";
         }
+    }
+    function sairSistema(){
+        session_destroy();
+        $_SESSION["msg"]="<div class='alert alert-danger' role='alert'>Sessão Expirada</div>";
+        header("Location:../view/logar.php");
     }
 ?>
