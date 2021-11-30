@@ -23,7 +23,6 @@ $totalJogoPed=$_SESSION['precoJog'];
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-var_dump($codFunFK);
 if(inserirPedidos($conexao,$codCliFK,$codFunFK,$codJogFK,$totalJogoPed)){
     echo("Pedidos cadastrado com sucesso.");
 }else{

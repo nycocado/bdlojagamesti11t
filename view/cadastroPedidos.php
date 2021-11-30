@@ -65,6 +65,7 @@ $_SESSION["codFun"]=$funcionario['codFun'];
   <div class="col-12">
     <button type="submit" class="btn btn-dark">Finalizar</button>
   </div>
+  </form>
 </div>
 <?php
 include_once("footer.php");
