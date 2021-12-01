@@ -1,4 +1,4 @@
 <?php 
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoAcesso.php");
 sairSistema();
 ?>

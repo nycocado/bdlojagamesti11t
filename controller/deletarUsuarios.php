@@ -1,6 +1,6 @@
 <?php
 include("../model/conexao.php");
-include("../model/bancoJogos.php");
+include("../model/bancoUsuarios.php");
 include("../view/header.php");
 ?>
 <style>

@@ -1,5 +1,9 @@
 <?php
-include_once("header.php");
+session_start();
+$email = isset($_SESSION["emailUsu"])?$_SESSION["emailUsu"]:null;
+if($email != null){
+    include("../view/header.php");
+}
 ?>
 <style>
 .container3 {
@@ -16,7 +20,7 @@ include_once("header.php");
 <div class="card">
 <div class="card-body">
 <form method="POST" action="../controller/inserirUsuarios.php">
-    <p>Email <input type="text" name="email"></p>
+    <p>Email <input type="email" name="email"></p>
     <p>Senha <input type="password" name="senha"></p>
     <p>PIN <input type="number" name="pin"></p>
     <button type="submit" class="btn btn-dark">Salvar</button>
@@ -25,5 +29,7 @@ include_once("header.php");
 </div>
 </div>
 <?php
+if($email != null){
 include_once("footer.php");
+}
 ?>

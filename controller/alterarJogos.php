@@ -19,7 +19,7 @@ include("../view/header.php");
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-if(alterarJogos($conexao,$codJog,$nomeJog,$tamanhoJog,$precoJog,$requisitosJog,$consoleJog,$classificacaoJog,$avaliacaoJog)){
+if(alterarJogos($conexao,$nomeJog,$tamanhoJog,$precoJog,$requisitosJog,$consoleJog,$classificacaoJog,$avaliacaoJog)){
     echo("Jogo alterado com sucesso.");
 }else{
     echo("Jogo não alterado.");

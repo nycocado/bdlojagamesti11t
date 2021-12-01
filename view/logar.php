@@ -26,7 +26,7 @@
                 <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
             </div>
             <button type="submit" class="btn btn-dark">Entrar</button>
-            <a href="#" type="button" class="btn btn-outline-dark">Cadastrar</a>
+            <a type="button" class="btn btn-outline-dark" href ="cadastroUsuarios.php">Cadastrar</a>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

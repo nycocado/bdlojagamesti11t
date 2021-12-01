@@ -1,6 +1,6 @@
 <?php
 include("../model/conexao.php");
-include("../model/bancoJogos.php");
+include("../model/bancoClientes.php");
 include("../view/header.php");
 ?>
 <style>
@@ -19,7 +19,7 @@ include("../view/header.php");
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-if(alterarClientes($conexao,$codCli,$codUsuFK,$nomeCli,$cpfCli,$foneCli,$datanasCli)){
+if(alterarClientes($conexao,$codUsuFK,$nomeCli,$cpfCli,$foneCli,$datanasCli)){
     echo("Cliente alterado com sucesso.");
 }else{
     echo("Cliente não alterado.");

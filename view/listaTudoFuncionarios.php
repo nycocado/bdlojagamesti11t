@@ -1,7 +1,7 @@
 <?php
 include_once("header.php");
 include_once("../model/conexao.php");
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoFuncionarios.php");
 ?>
 <table class="table">
     <thead>

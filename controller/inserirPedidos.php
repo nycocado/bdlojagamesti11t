@@ -1,6 +1,6 @@
 <?php
 include("../model/conexao.php");
-include("../model/bancoJogos.php");
+include("../model/bancoPedidos.php");
 include("../view/header.php");
 $codFunFK=$_SESSION['codFun'];
 $codCliFK=$_SESSION['codCli'];

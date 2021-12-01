@@ -1,7 +1,7 @@
 <?php
 include_once("header.php");
 include_once("../model/conexao.php");
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoUsuarios.php");
 ?>
 <div class="container m-5 p-5">
 <form action="listaTudoUsuariosCod.php" method="POST">

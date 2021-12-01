@@ -78,9 +78,9 @@ if(!$_SESSION["emailUsu"]){
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../view/cadastroPedidos.php">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoPedidos.php">Visualizar</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Buscar por Código</a></li>
+                                <li><a class="dropdown-item" href="../view/listaTudoPedidosCod.php">Buscar por Código</a></li>
                             </ul>
                         </li>
                     </ul>

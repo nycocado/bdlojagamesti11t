@@ -1,6 +1,6 @@
 <?php
 include("../model/conexao.php");
-include("../model/bancoFuncionarios.php");
+include("../model/bancoPedidos.php");
 include("../view/header.php");
 ?>
 <style>
@@ -19,10 +19,10 @@ include("../view/header.php");
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-if(alterarFuncionarios($conexao,$codUsuFK,$nomeFun,$funcaoFun,$foneFun,$datanasFun)){
-    echo("Funcionário alterado com sucesso.");
+if(deletarPedidos($conexao,$codPedDeletar)){
+    echo("Pedido deletado com sucesso.");
 }else{
-    echo("Funcionário não alterado.");
+    echo("Pedido não deletado.");
 }
 ?>
 </div>

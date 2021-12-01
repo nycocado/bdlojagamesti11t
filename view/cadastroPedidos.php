@@ -3,6 +3,8 @@ session_start();
 include_once("header.php");
 include_once("../model/conexao.php");
 include_once("../model/bancoJogos.php");
+include_once("../model/bancoFuncionarios.php");
+include_once("../model/bancoClientes.php");
 $codUsuFK= $_SESSION["codUsu"];
 $funcionario=listaBuscaFunUsu($conexao,$codUsuFK);
 $codCli= isset($_POST["codCli"])?$_POST["codCli"]:0;

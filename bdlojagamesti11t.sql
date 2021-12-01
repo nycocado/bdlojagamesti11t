@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Nov-2021 às 20:33
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 8.0.11
+-- Tempo de geração: 02-Dez-2021 às 00:34
+-- Versão do servidor: 10.4.19-MariaDB
+-- versão do PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,7 @@ CREATE TABLE `tbclientes` (
 --
 
 INSERT INTO `tbclientes` (`codCli`, `codUsuFK`, `nomeCli`, `cpfCli`, `foneCli`, `datanasCli`) VALUES
-(2, 6, 'nYC', '', '', '0000-00-00');
+(2, 6, 'adfgafa', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -63,10 +63,7 @@ CREATE TABLE `tbfuncionarios` (
 --
 
 INSERT INTO `tbfuncionarios` (`codFun`, `codUsuFK`, `nomeFun`, `funcaoFun`, `foneFun`, `datanasFun`) VALUES
-(2, 6, 'ghsfg', '', '', '0000-00-00'),
-(3, 6, '', '', '', '0000-00-00'),
-(4, 6, '', '', '', '0000-00-00'),
-(6, 6, '', '', '', '0000-00-00');
+(7, 7, 'Nycolas', 'Gerente', '12412351321', '2021-11-04');
 
 -- --------------------------------------------------------
 
@@ -85,6 +82,14 @@ CREATE TABLE `tbjogos` (
   `avaliacaoJog` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tbjogos`
+--
+
+INSERT INTO `tbjogos` (`codJog`, `nomeJog`, `tamanhoJog`, `precoJog`, `requisitosJog`, `consoleJog`, `classificacaoJog`, `avaliacaoJog`) VALUES
+(10, 'Minecraft', '12', '122.00', 'sfaf', 'adfafd', '23', 1),
+(11, 'mario car 234', '111', '100.00', '', 'efagf', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -96,7 +101,6 @@ CREATE TABLE `tbpedidos` (
   `codCliFK` int(4) NOT NULL,
   `codFunFK` int(4) NOT NULL,
   `codJogFK` int(4) NOT NULL,
-  `qtdJogoPed` int(6) NOT NULL,
   `totalJogoPed` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -118,7 +122,9 @@ CREATE TABLE `tbusuarios` (
 --
 
 INSERT INTO `tbusuarios` (`codUsu`, `emailUsu`, `senhaUsu`, `pinUsu`) VALUES
-(6, '5', '$2y$08$MeX4zwuQ8J/wW2Ct02rR9.TO001qvTMxRyh15KF14CodGXTYAsK96', 0);
+(6, 'nycolascanutto@gmail.com', '$2y$08$3uyZ9k0/Duho9ztx.ZPpYu7c4Eln7/.ZTLgWg0al0RvSs4qRSjmxO', 0),
+(7, 'nycolas@gmail.com', '$2y$08$wnhYde8Ic673iexJsQckrO9kPl3YltONhYSz6T1J1XMT17s9qhYsi', 1234),
+(8, 'sonialagaress@gmail.com', '$2y$08$J0cYxWZsMdat7hFxAEn2n.DVHwSDecBbwcTuT97kijPLFpSpEN11W', 1234);
 
 --
 -- Índices para tabelas despejadas
@@ -167,31 +173,31 @@ ALTER TABLE `tbusuarios`
 -- AUTO_INCREMENT de tabela `tbclientes`
 --
 ALTER TABLE `tbclientes`
-  MODIFY `codCli` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codCli` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tbfuncionarios`
 --
 ALTER TABLE `tbfuncionarios`
-  MODIFY `codFun` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codFun` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbjogos`
 --
 ALTER TABLE `tbjogos`
-  MODIFY `codJog` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `codJog` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tbpedidos`
 --
 ALTER TABLE `tbpedidos`
-  MODIFY `codPed` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codPed` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuarios`
 --
 ALTER TABLE `tbusuarios`
-  MODIFY `codUsu` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codUsu` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para despejos de tabelas

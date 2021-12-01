@@ -1,7 +1,7 @@
 <?php
 include_once("header.php");
 include_once("../model/conexao.php");
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoFuncionarios.php");
 ?>
 </br>
 <style>
@@ -24,7 +24,7 @@ $codFun=$_POST['codFunAlterar'];
 $funcionario=listaTudoFuncionariosCod($conexao,$codFun);
 ?>
     <p>Código <input type="number" name="codFun" value="<?=$funcionario['codFun']?>" readonly></p>
-    <p>Código do Usuário <input type="number" name="codUsuFK" value="<?=$funcionario['codUsuFK']?>" readonly></p>
+    <p>Código do Usuário <input type="number" name="codUsuFK" value="<?=$funcionario['codUsuFK']?>"></p>
     <p>Nome <input type="text" name="nomeFun" value="<?=$funcionario['nomeFun']?>"></p>
     <p>Função <input type="text" name="funcaoFun" value="<?=$funcionario['funcaoFun']?>"></p>
     <p>Telefone <input type="text" name="foneFun" value="<?=$funcionario['foneFun']?>"></p>

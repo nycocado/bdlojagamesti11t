@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoAcesso.php");
 include_once("../model/conexao.php");
 $email=$_POST["email"];
 $senha=$_POST["senha"];
@@ -13,3 +13,4 @@ if($email===$acesso){
     $_SESSION["msg"]="<div class='alert alert-danger' role='alert'>Os dados não conferem.. tente novamente.</div>";
     header("Location:../view/logar.php");
 }
+?>

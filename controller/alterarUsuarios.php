@@ -1,6 +1,6 @@
 <?php
 include("../model/conexao.php");
-include("../model/bancoJogos.php");
+include("../model/bancoUsuarios.php");
 include("../view/header.php");
 ?>
 <style>
@@ -19,7 +19,7 @@ include("../view/header.php");
 <div class="card-body">
 <?php
 extract($_REQUEST,EXTR_OVERWRITE);
-if(alterarUsuarios($conexao,$codUsu,$emailUsu,$senhaUsu,$pinUsu)){
+if(alterarUsuarios($conexao,$emailUsu,$senhaUsu,$pinUsu)){
     echo("Usuário alterado com sucesso.");
 }else{
     echo("Usuário não alterado.");

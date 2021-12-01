@@ -1,12 +1,12 @@
 <?php
 include_once("header.php");
 include_once("../model/conexao.php");
-include_once("../model/bancoJogos.php");
+include_once("../model/bancoFuncionarios.php");
 ?>
 <div class="container m-5 p-5">
 <form action="listaTudoFuncionariosNome.php" method="POST">
     <div class="row mb-3">
-        <label for="inputNome" class="col-sm-2 col-form-label">Digite o Nome do Função: </label>
+        <label for="inputNome" class="col-sm-2 col-form-label">Digite o Nome do Funcionário: </label>
         <div class="col-sm-3">
             <input type="text" name="nomeFun" class="form-control" id="inputNome" required>
         </div>
