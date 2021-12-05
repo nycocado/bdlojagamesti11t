@@ -20,8 +20,8 @@
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
-    function alterarFuncionarios($conexao,$codUsuFK,$nomeFun,$funcaoFun,$foneFun,$datanasFun){
-        $query="update tbfuncionarios set codUsuFK='{$codUsuFK}', nomeFun='{$nomeFun}', funcaoFun='{$funcaoFun}', foneFun='{$foneFun}' where datanasFun='{$datanasFun}'";
+    function alterarFuncionarios($conexao,$codFun,$codUsuFK,$nomeFun,$funcaoFun,$foneFun,$datanasFun){
+        $query="update tbfuncionarios set codUsuFK='{$codUsuFK}', nomeFun='{$nomeFun}', funcaoFun='{$funcaoFun}', foneFun='{$foneFun}', datanasFun='{$datanasFun}' where codFun='{$codFun}'";
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }

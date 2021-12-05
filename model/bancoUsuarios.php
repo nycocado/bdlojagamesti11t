@@ -17,10 +17,10 @@
         $resul=mysqli_fetch_array($resultados);
         return $resul;
     }
-    function alterarUsuarios($conexao,$emailUsu,$senhaUsu,$pinUsu){
+    function alterarUsuarios($conexao,$codUsu,$emailUsu,$senhaUsu,$pinUsu){
         $option=['cost'=>8];
         $senhacryto= password_hash($senhaUsu,PASSWORD_BCRYPT,$option);
-        $query="update tbusuarios set emailUsu='{$emailUsu}', senhaUsu='{$senhacryto}' where pinUsu='{$pinUsu}'";
+        $query="update tbusuarios set emailUsu='{$emailUsu}', senhaUsu='{$senhacryto}', pinUsu='{$pinUsu}' where codUsu='{$codUsu}'";
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }

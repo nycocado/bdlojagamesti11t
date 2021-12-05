@@ -20,8 +20,8 @@
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
-    function alterarClientes($conexao,$codUsuFK,$nomeCli,$cpfCli,$foneCli,$datanasCli){
-        $query="update tbclientes set codUsuFK='{$codUsuFK}', nomeCli='{$nomeCli}', cpfCli='{$cpfCli}', foneCli='{$foneCli}' where datanasCli='{$datanasCli}'";
+    function alterarClientes($conexao,$codCli,$codUsuFK,$nomeCli,$cpfCli,$foneCli,$datanasCli){
+        $query="update tbclientes set codUsuFK='{$codUsuFK}', nomeCli='{$nomeCli}', cpfCli='{$cpfCli}', foneCli='{$foneCli}', datanasCli='{$datanasCli}' where codCli='{$codCli}'";
         $resultados=mysqli_query($conexao,$query);
         return $resultados;
     }
